@@ -191,7 +191,7 @@ def main(args):
       rj, ri = int(rid/rvr_ni), rid%rvr_ni
       oid = brute_force_search_for_ocn_ij( ocn_lat, ocn_lon, rvr_lat[rj], rvr_lon[ri])
       rvr_oid[rj, ri] = oid
-    del ri, rj, oid, rid
+    #del ri, rj, oid, rid #This del causes runtime error if the above loop is empty 
     if args.progress: end_info(tic)
 
     if not args.quiet:
